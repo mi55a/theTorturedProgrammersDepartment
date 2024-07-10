@@ -4,7 +4,7 @@
 # Songs belong to Taylor Swift, pls don't sue me, I didn't step on your lawn 
 
 
-
+# Albums (including the EP!) (yes, some songs don't have their required punctuation but that'll be fixed)
 albums = {
     "Taylor Swift": ["Tim McGraw", "Picture to Burn", "Teardrops on My Guitar", "A Place in This World",
                      "Cold as You", "The Outside", "Tied Together with a Smile", "Stay Beautiful",
@@ -59,12 +59,16 @@ albums = {
 
 }
 
-
+# converts keys and values of dictionary into lowercase
 lowercase_albums = {k.lower(): [song.lower() for song in v] for k, v in albums.items()}
+# grab input, remove whitespace, and make it lowercase
 print("Hello user to the Taylor Swift discorgraphy! You chose an album, I give you the songs!")
 album_choice = input("Chose an album: ").strip().lower()
-
+# check if album choice is in the dictionary
 if album_choice in lowercase_albums:
+    # prints the songs in the album
     print(f"Songs in the album '{album_choice}':")
     for song in lowercase_albums[album_choice]:
         print(f"- {song}")
+
+# Future features: User chooses album and then chooses song or gets random song 
